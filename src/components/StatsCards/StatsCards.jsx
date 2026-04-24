@@ -15,9 +15,9 @@ const STAT_CARDS = [
     filterKey:   'pending',
     label:       'Pendientes',
     description: 'tareas por hacer',
-    color:       '#ffd740',
-    bgColor:     'rgba(255,215,64,0.08)',
-    borderColor: 'rgba(255,215,64,0.25)',
+    color:       '#e6bf00',
+    bgColor:     'rgba(230,191,0,0.08)',
+    borderColor: 'rgba(230,191,0,0.25)',
     icon: (
       <svg viewBox="0 0 24 24" fill="none">
         <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/>

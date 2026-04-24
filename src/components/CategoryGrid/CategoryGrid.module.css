@@ -197,6 +197,95 @@
 }
 
 /* ─────────────────────────────────────────
+   Botones editar / eliminar categoría
+───────────────────────────────────────── */
+.catActions {
+  display: flex;
+  gap: 0.3rem;
+  margin-top: 0.3rem;
+  width: 100%;
+}
+
+.catEditBtn,
+.catDeleteBtn {
+  flex: 1;
+  padding: 0.3rem 0;
+  border-radius: var(--radius-sm);
+  border: 1px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.catEditBtn svg,
+.catDeleteBtn svg {
+  width: 12px;
+  height: 12px;
+}
+
+.catEditBtn {
+  background: rgba(64,196,255,0.08);
+  border-color: rgba(64,196,255,0.3);
+  color: var(--color-upcoming);
+}
+
+.catEditBtn:hover {
+  background: rgba(64,196,255,0.18);
+  border-color: rgba(64,196,255,0.6);
+}
+
+.catDeleteBtn {
+  background: rgba(255,82,82,0.08);
+  border-color: rgba(255,82,82,0.3);
+  color: var(--color-overdue);
+}
+
+.catDeleteBtn:hover {
+  background: rgba(255,82,82,0.18);
+  border-color: rgba(255,82,82,0.6);
+}
+
+/* ── Confirm box ── */
+.confirmBox {
+  background: var(--color-bg-card);
+  border: 1px solid rgba(255,82,82,0.3);
+  border-radius: var(--radius-lg);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.confirmText {
+  font-size: 0.82rem;
+  color: var(--color-text-primary);
+}
+
+.confirmWarn {
+  font-size: 0.74rem;
+  color: var(--color-text-muted);
+}
+
+.confirmDeleteBtn {
+  flex: 1;
+  padding: 0.45rem 0.75rem;
+  border-radius: var(--radius-md);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  background: rgba(255,82,82,0.15);
+  border: 1px solid rgba(255,82,82,0.4);
+  color: var(--color-overdue);
+  transition: all var(--transition-fast);
+}
+
+.confirmDeleteBtn:hover {
+  background: rgba(255,82,82,0.28);
+}
+
+/* ─────────────────────────────────────────
    Formulario de nueva categoría (inline)
 ───────────────────────────────────────── */
 .addForm {
@@ -234,6 +323,53 @@
   box-shadow: 0 0 0 2px var(--color-green-dim);
 }
 
+/* Etiqueta de sección dentro del form */
+.pickerLabel {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--color-text-muted);
+  margin-top: 0.75rem;
+  margin-bottom: 0.35rem;
+}
+
+/* Selector de iconos */
+.iconPicker {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin-bottom: 0.25rem;
+}
+
+.iconDot {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--color-border);
+  background: var(--color-bg-input);
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  line-height: 1;
+}
+
+.iconDot:hover {
+  border-color: var(--color-green-primary);
+  background: var(--color-green-dim);
+  transform: scale(1.12);
+}
+
+.iconDotActive {
+  border-color: var(--color-green-primary) !important;
+  background: var(--color-green-dim) !important;
+  box-shadow: 0 0 0 2px var(--color-green-border);
+  transform: scale(1.12);
+}
+
 /* Selector de color */
 .colorPicker {
   display: flex;
@@ -264,6 +400,7 @@
 .addFormActions {
   display: flex;
   gap: 0.5rem;
+  margin-top: 0.85rem;
 }
 
 .addFormCancel,

@@ -16,6 +16,11 @@ import { getCategoryIcon, calculateTaskStats, filterTasks } from '../../utils/he
 import { CATEGORY_COLORS } from '../../utils/constants';
 import styles from './CategoryGrid.module.css';
 
+const ICON_OPTIONS = [
+  '📁','💼','🎓','🏠','🛒','👤','🏥','💰','🏃','📚','🎨','🎮',
+  '✈️','🍽️','🌿','🔧','💡','📅','🎯','🏆','❤️','⭐','🔔','📝',
+];
+
 /* Variantes de animación para cada tarjeta */
 const cardVariants = {
   hidden:  { opacity: 0, scale: 0.9 },
@@ -26,12 +31,20 @@ const cardVariants = {
 };
 
 const CategoryGrid = () => {
-  const { categories, tasks, tasksByCategory, filters, updateFilters, clearFilters, addCategory } = useTasks();
+  const { categories, tasks, tasksByCategory, filters, updateFilters, clearFilters, addCategory, editCategory, removeCategory } = useTasks();
 
-  const [showAddForm, setShowAddForm]   = useState(false);
-  const [newCatName,  setNewCatName]    = useState('');
-  const [newCatColor, setNewCatColor]   = useState(CATEGORY_COLORS[0]);
-  const [addLoading,  setAddLoading]    = useState(false);
+  const [showAddForm,  setShowAddForm]  = useState(false);
+  const [newCatName,   setNewCatName]   = useState('');
+  const [newCatColor,  setNewCatColor]  = useState(CATEGORY_COLORS[0]);
+  const [newCatIcon,   setNewCatIcon]   = useState('📁');
+  const [addLoading,   setAddLoading]   = useState(false);
+
+  const [editingCat,   setEditingCat]   = useState(null);
+  const [editName,     setEditName]     = useState('');
+  const [editColor,    setEditColor]    = useState('');
+  const [editIcon,     setEditIcon]     = useState('📁');
+  const [editLoading,  setEditLoading]  = useState(false);
+  const [confirmDel,   setConfirmDel]   = useState(null);
 
   /** Categoría actualmente seleccionada en el filtro */
   const activeCat = filters.category;
@@ -55,11 +68,41 @@ const CategoryGrid = () => {
     e.preventDefault();
     if (!newCatName.trim()) return;
     setAddLoading(true);
-    await addCategory({ name: newCatName.trim(), color: newCatColor });
+    await addCategory({ name: newCatName.trim(), color: newCatColor, icon: newCatIcon });
     setNewCatName('');
     setNewCatColor(CATEGORY_COLORS[0]);
+    setNewCatIcon('📁');
     setShowAddForm(false);
     setAddLoading(false);
+  };
+
+  const handleStartEdit = (e, cat) => {
+    e.stopPropagation();
+    setEditingCat(cat);
+    setEditName(cat.name);
+    setEditColor(cat.color);
+    setEditIcon(cat.icon || getCategoryIcon(cat.name));
+    setShowAddForm(false);
+  };
+
+  const handleEditSubmit = async (e) => {
+    e.preventDefault();
+    if (!editName.trim()) return;
+    setEditLoading(true);
+    const ok = await editCategory(editingCat.id, { ...editingCat, name: editName.trim(), color: editColor, icon: editIcon });
+    if (ok) setEditingCat(null);
+    setEditLoading(false);
+  };
+
+  const handleDelete = async (e, cat) => {
+    e.stopPropagation();
+    setConfirmDel(cat);
+  };
+
+  const handleConfirmDelete = async () => {
+    await removeCategory(confirmDel.id);
+    updateFilters({ category: '' });
+    setConfirmDel(null);
   };
 
   const isAllActive = !activeCat;
@@ -98,7 +141,7 @@ const CategoryGrid = () => {
               <div className={styles.colorBar} />
 
               {/* Ícono */}
-              <span className={styles.icon}>{getCategoryIcon(cat.name)}</span>
+              <span className={styles.icon}>{cat.icon || getCategoryIcon(cat.name)}</span>
 
               {/* Nombre */}
               <span className={styles.name}>{cat.name}</span>
@@ -111,6 +154,33 @@ const CategoryGrid = () => {
                 <span className={styles.miniPending}  title="Pendientes">{catStats.pending}⏳</span>
                 <span className={styles.miniDone}     title="Completadas">{catStats.completed}✓</span>
               </div>
+
+              {/* Botones editar / eliminar (solo cuando está activa) */}
+              {isActive && (
+                <div className={styles.catActions} onClick={(e) => e.stopPropagation()}>
+                  <button
+                    className={styles.catEditBtn}
+                    onClick={(e) => handleStartEdit(e, cat)}
+                    title="Editar categoría"
+                  >
+                    <svg viewBox="0 0 24 24" fill="none">
+                      <path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </button>
+                  <button
+                    className={styles.catDeleteBtn}
+                    onClick={(e) => handleDelete(e, cat)}
+                    title="Eliminar categoría"
+                  >
+                    <svg viewBox="0 0 24 24" fill="none">
+                      <polyline points="3 6 5 6 21 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6M10 11v6M14 11v6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M9 6V4a1 1 0 011-1h4a1 1 0 011 1v2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </button>
+                </div>
+              )}
             </motion.button>
           );
         })}
@@ -155,6 +225,76 @@ const CategoryGrid = () => {
         </motion.button>
       </div>
 
+      {/* ── Form editar categoría ── */}
+      {editingCat && (
+        <motion.div
+          className={styles.addForm}
+          initial={{ opacity: 0, y: -8 }}
+          animate={{ opacity: 1, y: 0 }}
+        >
+          <p className={styles.addFormTitle}>Editar categoría</p>
+          <form onSubmit={handleEditSubmit}>
+            <input
+              className={styles.addInput}
+              type="text"
+              value={editName}
+              onChange={(e) => setEditName(e.target.value)}
+              autoFocus
+              maxLength={20}
+            />
+            <p className={styles.pickerLabel}>Ícono</p>
+            <div className={styles.iconPicker}>
+              {ICON_OPTIONS.map((ico) => (
+                <button
+                  key={ico}
+                  type="button"
+                  className={`${styles.iconDot} ${editIcon === ico ? styles.iconDotActive : ''}`}
+                  onClick={() => setEditIcon(ico)}
+                >
+                  {ico}
+                </button>
+              ))}
+            </div>
+            <p className={styles.pickerLabel}>Color</p>
+            <div className={styles.colorPicker}>
+              {CATEGORY_COLORS.map((c) => (
+                <button
+                  key={c}
+                  type="button"
+                  className={`${styles.colorDot} ${editColor === c ? styles.colorDotActive : ''}`}
+                  style={{ background: c }}
+                  onClick={() => setEditColor(c)}
+                />
+              ))}
+            </div>
+            <div className={styles.addFormActions}>
+              <button type="button" className={styles.addFormCancel} onClick={() => setEditingCat(null)}>
+                Cancelar
+              </button>
+              <button type="submit" className={styles.addFormSubmit} disabled={editLoading || !editName.trim()}>
+                {editLoading ? '...' : 'Guardar'}
+              </button>
+            </div>
+          </form>
+        </motion.div>
+      )}
+
+      {/* ── Confirmar eliminación ── */}
+      {confirmDel && (
+        <motion.div
+          className={styles.confirmBox}
+          initial={{ opacity: 0, y: -8 }}
+          animate={{ opacity: 1, y: 0 }}
+        >
+          <p className={styles.confirmText}>¿Eliminar <strong>{confirmDel.name}</strong>?</p>
+          <p className={styles.confirmWarn}>Las tareas de esta categoría no se borrarán.</p>
+          <div className={styles.addFormActions}>
+            <button className={styles.addFormCancel} onClick={() => setConfirmDel(null)}>Cancelar</button>
+            <button className={styles.confirmDeleteBtn} onClick={handleConfirmDelete}>Eliminar</button>
+          </div>
+        </motion.div>
+      )}
+
       {/* ── Modal inline para nueva categoría ── */}
       {showAddForm && (
         <motion.div
@@ -173,7 +313,20 @@ const CategoryGrid = () => {
               autoFocus
               maxLength={20}
             />
-            {/* Selector de color */}
+            <p className={styles.pickerLabel}>Ícono</p>
+            <div className={styles.iconPicker}>
+              {ICON_OPTIONS.map((ico) => (
+                <button
+                  key={ico}
+                  type="button"
+                  className={`${styles.iconDot} ${newCatIcon === ico ? styles.iconDotActive : ''}`}
+                  onClick={() => setNewCatIcon(ico)}
+                >
+                  {ico}
+                </button>
+              ))}
+            </div>
+            <p className={styles.pickerLabel}>Color</p>
             <div className={styles.colorPicker}>
               {CATEGORY_COLORS.map((c) => (
                 <button

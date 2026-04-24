@@ -198,6 +198,36 @@
   opacity: 0.7;
 }
 
+/* ── Fila de progreso siempre visible ── */
+.progressRow {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0 0.9rem 0.65rem 2.75rem;
+  cursor: pointer;
+}
+
+.progressLabel {
+  font-size: 0.62rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.progressPct {
+  font-size: 0.68rem;
+  font-weight: 700;
+  font-family: var(--font-mono);
+  color: var(--color-green-primary);
+  white-space: nowrap;
+  flex-shrink: 0;
+  min-width: 2.6rem;
+  text-align: right;
+}
+
 /* ══════════════════════════════
    ÁREA EXPANDIDA
 ══════════════════════════════ */
@@ -256,6 +286,7 @@
 
 /* Barra de progreso de subtareas */
 .subProgress {
+  flex: 1;
   height: 4px;
   background: rgba(255,255,255,0.06);
   border-radius: var(--radius-full);

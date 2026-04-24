@@ -8,84 +8,18 @@
     },
     {
       "id": "2",
+      "email": "LuisIsaza@admin.com",
+      "password": "Master10*",
+      "name": "Administrador"
+    },
+    {
+      "id": "3",
       "email": "usuario@test.com",
       "password": "test123",
       "name": "Usuario Test"
     }
   ],
   "tasks": [
-    {
-      "titulo": "App licencias",
-      "descripcion": "hacer la licencia",
-      "categoria": "Trabajo",
-      "fechaInicio": "2026-04-20",
-      "fechaFin": "2026-04-21",
-      "alertaDias": 1,
-      "categoriaColor": "#00e676",
-      "estado": "completada",
-      "createdAt": "2026-04-20T17:58:38.885Z",
-      "id": "5Tm4CsCcIzo",
-      "updatedAt": "2026-04-20T17:58:58.006Z"
-    },
-    {
-      "titulo": "Ajuste Arquitectura Lic. Construcción",
-      "descripcion": "Ajustar Licencias",
-      "categoria": "Trabajo",
-      "fechaInicio": "2026-04-20",
-      "fechaFin": "2026-04-21",
-      "alertaDias": 1,
-      "categoriaColor": "#00e676",
-      "updatedAt": "2026-04-20T19:17:37.424Z",
-      "id": "9fxYBBCHdZU"
-    },
-    {
-      "titulo": "Ajustar Flujo de Envio ",
-      "descripcion": "Ajustar Flujo de Envio \n",
-      "categoria": "Trabajo",
-      "fechaInicio": "2026-04-20",
-      "fechaFin": "2026-04-22",
-      "alertaDias": 3,
-      "categoriaColor": "#00e676",
-      "estado": "pendiente",
-      "createdAt": "2026-04-20T19:18:22.641Z",
-      "id": "Dbg5sE5oyw8"
-    },
-    {
-      "titulo": "- Ajustes Sharepoint Solicitados por Maria",
-      "descripcion": "- Ajustes Sharepoint Solicitados por Maria",
-      "categoria": "Trabajo",
-      "fechaInicio": "2026-04-20",
-      "fechaFin": "2026-04-21",
-      "alertaDias": 3,
-      "categoriaColor": "#00e676",
-      "estado": "pendiente",
-      "createdAt": "2026-04-20T19:18:42.662Z",
-      "id": "cZZnxVEhyXY"
-    },
-    {
-      "titulo": "- Ajustes Sharepoint Solicitados por Maria",
-      "descripcion": "- Ajustes Sharepoint Solicitados por Maria",
-      "categoria": "Trabajo",
-      "fechaInicio": "2026-04-20",
-      "fechaFin": "2026-04-21",
-      "alertaDias": 3,
-      "categoriaColor": "#00e676",
-      "estado": "pendiente",
-      "createdAt": "2026-04-20T19:18:57.896Z",
-      "id": "curXxpltUD4"
-    },
-    {
-      "titulo": "- Quitar todas las aclaraciones y estado no se vence",
-      "descripcion": "- Quitar todas las aclaraciones y estado no se vence",
-      "categoria": "Trabajo",
-      "fechaInicio": "2026-04-20",
-      "fechaFin": "2026-04-21",
-      "alertaDias": 5,
-      "categoriaColor": "#00e676",
-      "estado": "pendiente",
-      "createdAt": "2026-04-20T19:19:13.317Z",
-      "id": "K9MDywPKIYw"
-    },
     {
       "titulo": "Pago Proximo semestre",
       "descripcion": "Pago Proximo semestre",
@@ -94,80 +28,38 @@
       "fechaFin": "2026-05-09",
       "alertaDias": 3,
       "categoriaColor": "#40c4ff",
-      "estado": "pendiente",
+      "estado": "completada",
       "createdAt": "2026-04-20T19:19:38.701Z",
-      "id": "_FLv8tv88dE"
-    },
-    {
-      "titulo": "App App ",
-      "descripcion": "App ",
-      "categoria": "Universidad",
-      "fechaInicio": "2026-04-20",
-      "fechaFin": "2026-04-29",
-      "alertaDias": 3,
-      "categoriaColor": "#40c4ff",
-      "estado": "pendiente",
-      "createdAt": "2026-04-20T19:19:52.210Z",
-      "id": "3dvrVu2ix3M"
+      "id": "_FLv8tv88dE",
+      "updatedAt": "2026-04-24T00:51:54.040Z"
     },
     {
       "titulo": "App Licencias",
-      "descripcion": "adasdas",
+      "descripcion": "App Licencias de Construcción desarrollada en Power Apps para la organización",
       "categoria": "Trabajo",
-      "fechaInicio": "2026-04-20",
-      "fechaFin": "2026-04-23",
-      "alertaDias": 3,
-      "categoriaColor": "#00e676",
-      "subtasks": [],
-      "estado": "completada",
-      "createdAt": "2026-04-20T19:47:39.410Z",
-      "id": "2_W2Q6gDylE",
-      "updatedAt": "2026-04-21T00:13:34.312Z"
-    },
-    {
-      "titulo": "App licencias",
-      "descripcion": "adasdasd",
-      "categoria": "Trabajo",
-      "fechaInicio": "2026-04-20",
-      "fechaFin": "2026-04-21",
-      "alertaDias": 3,
-      "categoriaColor": "#00e676",
-      "subtasks": [
-        {
-          "id": "mo7vf59chobuajznlw",
-          "title": "ASDASD",
-          "completed": false
-        }
-      ],
-      "estado": "completada",
-      "createdAt": "2026-04-20T19:48:04.975Z",
-      "id": "VcZeljQCpCU",
-      "updatedAt": "2026-04-21T00:13:44.160Z"
-    },
-    {
-      "titulo": "asdasd",
-      "descripcion": "asdasd",
-      "categoria": "Universidad",
-      "fechaInicio": "2026-04-20",
+      "fechaInicio": "2025-11-01",
       "fechaFin": "2026-05-01",
-      "alertaDias": 3,
-      "categoriaColor": "#40c4ff",
+      "alertaDias": 5,
+      "categoriaColor": "#00e676",
+      "updatedAt": "2026-04-24T00:38:21.458Z",
+      "id": "VcZeljQCpCU",
       "subtasks": [
         {
-          "id": "mo7lynbmt4ljdgm89i",
-          "title": "asdasd",
+          "id": "moc6l5cht6npeldo738",
+          "title": "Sesión con los Directores para Archivos PDF",
           "completed": false
         },
         {
-          "id": "mo7lypi9xpdtn1cz2kd",
-          "title": "asdasd",
+          "id": "moc6m356qsgm7tizcn",
+          "title": "Revisión de Flujo de Correos de Alertamiento",
+          "completed": false
+        },
+        {
+          "id": "moc6md5ev18lrks8kw",
+          "title": "Despliegue con Carlos",
           "completed": false
         }
-      ],
-      "estado": "pendiente",
-      "createdAt": "2026-04-20T19:48:18.077Z",
-      "id": "fk9VJRbp2vQ",
-      "updatedAt": "2026-04-20T19:57:30.311Z"
+      ]
     },
     {
       "titulo": "Tarera de ingenieria Web II",
@@ -191,27 +83,297 @@
         {
           "id": "mo7mu7ommbuv3wnqpap",
           "title": "Codigo Htm CSS JS y API JS",
+          "completed": true
+        },
+        {
+          "id": "moc748s9ink8aigbco",
+          "title": "Crear Manual",
+          "completed": false
+        },
+        {
+          "id": "moc74fg7cr1e5guffym",
+          "title": "Subir a GitHub",
+          "completed": true
+        },
+        {
+          "id": "moc74ijt6bct1fzmrbq",
+          "title": "Cargar Tarea",
           "completed": false
         }
       ],
       "estado": "pendiente",
       "createdAt": "2026-04-20T20:12:45.529Z",
       "id": "fKHftzeRhoc",
-      "updatedAt": "2026-04-20T20:13:36.035Z"
+      "updatedAt": "2026-04-24T00:52:29.751Z"
     },
     {
-      "titulo": "Tarea de Matematicas",
-      "descripcion": "",
+      "titulo": "Bot Contratos",
+      "descripcion": "Migración de Bot de Contratos de UiPath a Rocketbot",
+      "categoria": "Trabajo",
+      "fechaInicio": "2026-04-01",
+      "fechaFin": "2026-05-01",
+      "alertaDias": 5,
+      "categoriaColor": "#00e676",
+      "subtasks": [
+        {
+          "id": "moc6o1u6428ovdoj0y1",
+          "title": "Doble Factor de Autenticación",
+          "completed": false
+        },
+        {
+          "id": "moc6oefeqxjbd721e2h",
+          "title": "Ciclo de Navegación hasta ruta de contratos",
+          "completed": false
+        },
+        {
+          "id": "moc6okjrokqxo6ntxd",
+          "title": "Filtros de Contratos",
+          "completed": false
+        },
+        {
+          "id": "moc6owf8cnqqqscbw8l",
+          "title": "Crear cada contrato a un excel",
+          "completed": false
+        },
+        {
+          "id": "moc6pmr701q2eq7ze3iq",
+          "title": "Ciclo de Creación de Contratos",
+          "completed": false
+        },
+        {
+          "id": "moc6qnt93enbpd41ugq",
+          "title": "Navegar hasta la busqueda de contratos",
+          "completed": false
+        },
+        {
+          "id": "moc6rdxs8o1ytg8h4ko",
+          "title": "Capturar Variables de Contratos e ir creando el contrato",
+          "completed": false
+        },
+        {
+          "id": "moc6rje8j6w55pvz04",
+          "title": "Creación de Informa",
+          "completed": false
+        },
+        {
+          "id": "moc6rpcqmex9egvjb6b",
+          "title": "Envío de Correo",
+          "completed": false
+        }
+      ],
+      "estado": "pendiente",
+      "createdAt": "2026-04-24T00:39:15.968Z",
+      "id": "8SciatdbWGU",
+      "updatedAt": "2026-04-24T00:42:30.554Z"
+    },
+    {
+      "titulo": "Bot de Creación de Actas",
+      "descripcion": "Crear el Bot de Actas a Partir del Bot de creación de Contratos",
+      "categoria": "Trabajo",
+      "fechaInicio": "2026-05-01",
+      "fechaFin": "2026-05-08",
+      "alertaDias": 5,
+      "categoriaColor": "#00e676",
+      "subtasks": [],
+      "estado": "pendiente",
+      "createdAt": "2026-04-24T00:43:20.880Z",
+      "id": "vjg2fvMhoGA"
+    },
+    {
+      "titulo": "SyncDesing",
+      "descripcion": "Envió de correo con parámetros para que Laura y patricia avancen con la configuración en el equipo de patricia ",
+      "categoria": "Trabajo",
+      "fechaInicio": "2026-04-28",
+      "fechaFin": "2026-04-29",
+      "alertaDias": 3,
+      "categoriaColor": "#00e676",
+      "subtasks": [],
+      "estado": "pendiente",
+      "createdAt": "2026-04-24T00:44:19.445Z",
+      "id": "M5eXPn_FNIY"
+    },
+    {
+      "titulo": "Claude",
+      "descripcion": "Estudiar Claude",
+      "categoria": "Trabajo",
+      "fechaInicio": "2026-04-24",
+      "fechaFin": "2026-05-08",
+      "alertaDias": 14,
+      "categoriaColor": "#00e676",
+      "subtasks": [
+        {
+          "id": "moc6xx112g988009xzi",
+          "title": "Estudiar MCP",
+          "completed": false
+        },
+        {
+          "id": "moc6y9121mx36phyyll",
+          "title": "Realizar curso del certificado 101",
+          "completed": false
+        },
+        {
+          "id": "moc6ydaho3wrkl8z43h",
+          "title": "Estudiar SKILLS",
+          "completed": false
+        }
+      ],
+      "estado": "pendiente",
+      "createdAt": "2026-04-24T00:47:13.305Z",
+      "id": "1_WFYLGpcK8",
+      "updatedAt": "2026-04-24T00:47:41.513Z"
+    },
+    {
+      "titulo": "Migrar a Alejo la cuenta de Claude",
+      "descripcion": "Migrar la cuenta Enterprise que tiene a la de Team que se le creo y sacar las automatizaciones que tiene ",
+      "categoria": "Trabajo",
+      "fechaInicio": "2026-04-27",
+      "fechaFin": "2026-05-01",
+      "alertaDias": 5,
+      "categoriaColor": "#00e676",
+      "subtasks": [],
+      "estado": "pendiente",
+      "createdAt": "2026-04-24T00:48:44.457Z",
+      "id": "fyQyIu8JnF8"
+    },
+    {
+      "titulo": "Certificado de RocketBot",
+      "descripcion": "Certificarme en RocketBot",
+      "categoria": "Trabajo",
+      "fechaInicio": "2026-04-27",
+      "fechaFin": "2026-07-03",
+      "alertaDias": 30,
+      "categoriaColor": "#00e676",
+      "subtasks": [
+        {
+          "id": "moc72ov2bvfcjsk7gdo",
+          "title": "Nivel 1",
+          "completed": false
+        },
+        {
+          "id": "moc72yavmc8tuz17pj8",
+          "title": "Nivel 2",
+          "completed": false
+        },
+        {
+          "id": "moc731eea4g5hy3j66p",
+          "title": "Nivel 3",
+          "completed": false
+        }
+      ],
+      "estado": "pendiente",
+      "createdAt": "2026-04-24T00:50:57.747Z",
+      "id": "My6VvVtNAt8",
+      "updatedAt": "2026-04-24T00:51:19.382Z"
+    },
+    {
+      "titulo": "App de Mascotas",
+      "descripcion": "Crear App de mascotas control y hoja de vida de mascotas",
       "categoria": "Universidad",
-      "fechaInicio": "2026-04-20",
-      "fechaFin": "2026-04-20",
+      "fechaInicio": "2026-04-24",
+      "fechaFin": "2026-04-26",
       "alertaDias": 3,
       "categoriaColor": "#40c4ff",
-      "subtasks": [],
+      "subtasks": [
+        {
+          "id": "moc75p2jjkmzn3vncdk",
+          "title": "Diseño con apoyo de IA",
+          "completed": false
+        },
+        {
+          "id": "moc75vk2uyatqtbyr3",
+          "title": "Creación de APP",
+          "completed": false
+        },
+        {
+          "id": "moc76131hhdwh0wish9",
+          "title": "Carga en GitHub",
+          "completed": false
+        },
+        {
+          "id": "moc762q7jqphztvgo2c",
+          "title": "Documento",
+          "completed": false
+        },
+        {
+          "id": "moc767a1yjr5m5wzkwa",
+          "title": "Cargar en Tareas",
+          "completed": false
+        }
+      ],
+      "estado": "pendiente",
+      "createdAt": "2026-04-24T00:53:14.499Z",
+      "id": "3nglsNPVmL0",
+      "updatedAt": "2026-04-24T00:53:46.969Z"
+    },
+    {
+      "titulo": "Realizar Oficio Jueves 23 de Abril 2026",
+      "descripcion": "",
+      "categoria": "Casa",
+      "fechaInicio": "2026-04-23",
+      "fechaFin": "2026-04-23",
+      "alertaDias": 1,
+      "categoriaColor": "#ff6d00",
+      "subtasks": [
+        {
+          "id": "moc77kjamqu4gfgqjik",
+          "title": "Oficio Pieza",
+          "completed": true
+        },
+        {
+          "id": "moc77t2tkkw4625cfbj",
+          "title": "Orden",
+          "completed": true
+        },
+        {
+          "id": "moc77vnbed3cw44az7t",
+          "title": "Cama",
+          "completed": true
+        },
+        {
+          "id": "moc77ytub9orszamg7k",
+          "title": "Barrer",
+          "completed": true
+        },
+        {
+          "id": "moc782wd0zdf83dlhhld",
+          "title": "Oficio Sala",
+          "completed": true
+        },
+        {
+          "id": "moc788061y95r35ll2x",
+          "title": "Orden",
+          "completed": true
+        },
+        {
+          "id": "moc78efdkgrqw9c24ik",
+          "title": "Barrer",
+          "completed": true
+        },
+        {
+          "id": "moc78i7mg8pdzafrq6n",
+          "title": "Lavar Loza",
+          "completed": true
+        },
+        {
+          "id": "moc78oitv5ffra6ktdm",
+          "title": "Oficio Pieza de Oton",
+          "completed": true
+        },
+        {
+          "id": "moc78pw5tlhg4z69wo",
+          "title": "Orden",
+          "completed": true
+        },
+        {
+          "id": "moc78rj96p8cmc3jmm",
+          "title": "Barrer",
+          "completed": true
+        }
+      ],
       "estado": "completada",
-      "createdAt": "2026-04-20T20:14:14.678Z",
-      "id": "O_t0CG6RVHY",
-      "updatedAt": "2026-04-20T20:14:18.151Z"
+      "createdAt": "2026-04-24T00:54:32.268Z",
+      "id": "Bfvv7fEAWMU",
+      "updatedAt": "2026-04-24T02:55:26.352Z"
     }
   ],
   "categories": [
@@ -234,6 +396,19 @@
       "id": "4",
       "name": "Compras",
       "color": "#e040fb"
+    },
+    {
+      "name": "Proyectos Personales",
+      "color": "#40c4ff",
+      "createdAt": "2026-04-24T02:41:43.077Z",
+      "id": "Nmc3_NUu7Qo"
+    },
+    {
+      "name": "yut",
+      "color": "#ff5252",
+      "icon": "🔧",
+      "createdAt": "2026-04-24T02:53:58.877Z",
+      "id": "5f-3ZyN1XH8"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

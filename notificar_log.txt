@@ -1,0 +1,70 @@
+﻿2026-04-23 20:10:14 - Iniciando script
+2026-04-23 20:10:14 - Leyendo C:\Users\lisaza\Documents\GitHub\List_Tareas\db.json
+2026-04-23 20:10:14 - Total tareas: 11
+2026-04-23 20:10:14 - Vencidas: 1 | Proximas: 2
+2026-04-23 20:10:14 - Enviando notif vencidas: Tarera de ingenieria Web II (vencio hace 3d)
+2026-04-23 20:10:18 - Enviando notif proximas: App de Mascotas (vence en 3d) | Realizar Oficio Jueves 23 de Abril 2026 (vence en 0d)
+2026-04-23 20:10:23 - Finalizado
+2026-04-23 20:10:52 - Iniciando script
+2026-04-23 20:10:52 - Leyendo C:\Users\lisaza\Documents\GitHub\List_Tareas\db.json
+2026-04-23 20:10:53 - Total tareas: 11
+2026-04-23 20:10:53 - Vencidas: 1 | Proximas: 2
+2026-04-23 20:10:53 - Enviando notif vencidas: Tarera de ingenieria Web II (vencio hace 3d)
+2026-04-23 20:10:53 - Iniciando script
+2026-04-23 20:10:53 - Leyendo C:\Users\lisaza\Documents\GitHub\List_Tareas\db.json
+2026-04-23 20:10:53 - Total tareas: 11
+2026-04-23 20:10:53 - Vencidas: 1 | Proximas: 2
+2026-04-23 20:10:53 - Enviando notif vencidas: Tarera de ingenieria Web II (vencio hace 3d)
+2026-04-23 20:10:54 - Iniciando script
+2026-04-23 20:10:54 - Leyendo C:\Users\lisaza\Documents\GitHub\List_Tareas\db.json
+2026-04-23 20:10:54 - Total tareas: 11
+2026-04-23 20:10:54 - Vencidas: 1 | Proximas: 2
+2026-04-23 20:10:54 - Enviando notif vencidas: Tarera de ingenieria Web II (vencio hace 3d)
+2026-04-23 20:10:57 - Enviando notif proximas: App de Mascotas (vence en 3d) | Realizar Oficio Jueves 23 de Abril 2026 (vence en 0d)
+2026-04-23 20:10:57 - Enviando notif proximas: App de Mascotas (vence en 3d) | Realizar Oficio Jueves 23 de Abril 2026 (vence en 0d)
+2026-04-23 20:10:58 - Enviando notif proximas: App de Mascotas (vence en 3d) | Realizar Oficio Jueves 23 de Abril 2026 (vence en 0d)
+2026-04-23 20:11:01 - Finalizado
+2026-04-23 20:11:02 - Finalizado
+2026-04-23 20:11:02 - Finalizado
+2026-04-24 06:49:10 - Iniciando script
+2026-04-24 06:49:10 - Leyendo C:\Users\lisaza\Documents\GitHub\List_Tareas\db.json
+2026-04-24 06:49:10 - Total tareas: 11
+2026-04-24 06:49:10 - Vencidas: 1 | Proximas: 2
+2026-04-24 06:49:10 - Enviando notif vencidas: Tarera de ingenieria Web II (vencio hace 4d)
+2026-04-24 06:49:14 - Enviando notif proximas: Claude (vence en 14d) | App de Mascotas (vence en 2d)
+2026-04-24 06:49:19 - Finalizado
+2026-04-24 07:06:14 - Iniciando script
+2026-04-24 07:06:14 - Leyendo C:\Users\lisaza\Documents\GitHub\List_Tareas\db.json
+2026-04-24 07:06:14 - Total tareas: 11
+2026-04-24 07:06:14 - Vencidas: 1 | Proximas: 2
+2026-04-24 07:06:14 - Enviando notif vencidas: Tarera de ingenieria Web II (vencio hace 4d)
+2026-04-24 07:06:18 - Enviando notif proximas: Claude (vence en 14d) | App de Mascotas (vence en 2d)
+2026-04-24 07:06:23 - Finalizado
+2026-04-24 07:08:35 - Iniciando script
+2026-04-24 07:08:35 - Leyendo C:\Users\lisaza\Documents\GitHub\List_Tareas\db.json
+2026-04-24 07:08:35 - Total tareas: 11
+2026-04-24 07:08:35 - Vencidas: 1 | Proximas: 2
+2026-04-24 07:08:35 - Enviando notif vencidas: Tarera de ingenieria Web II (vencio hace 4d)
+2026-04-24 07:08:39 - Enviando notif proximas: Claude (vence en 14d) | App de Mascotas (vence en 2d)
+2026-04-24 07:08:44 - Finalizado
+2026-04-24 07:09:03 - Iniciando script
+2026-04-24 07:09:03 - Leyendo C:\Users\lisaza\Documents\GitHub\List_Tareas\db.json
+2026-04-24 07:09:03 - Total tareas: 11
+2026-04-24 07:09:03 - Vencidas: 1 | Proximas: 2
+2026-04-24 07:09:03 - Enviando notif vencidas: Tarera de ingenieria Web II (vencio hace 4d)
+2026-04-24 07:09:08 - Enviando notif proximas: Claude (vence en 14d) | App de Mascotas (vence en 2d)
+2026-04-24 07:09:12 - Finalizado
+2026-04-24 07:09:44 - Iniciando script
+2026-04-24 07:09:44 - Leyendo C:\Users\lisaza\Documents\GitHub\List_Tareas\db.json
+2026-04-24 07:09:44 - Total tareas: 11
+2026-04-24 07:09:44 - Vencidas: 1 | Proximas: 2
+2026-04-24 07:09:44 - Enviando notif vencidas: Tarera de ingenieria Web II (vencio hace 4d)
+2026-04-24 07:09:48 - Enviando notif proximas: Claude (vence en 14d) | App de Mascotas (vence en 2d)
+2026-04-24 07:09:52 - Finalizado
+2026-04-24 07:10:03 - Iniciando script
+2026-04-24 07:10:03 - Leyendo C:\Users\lisaza\Documents\GitHub\List_Tareas\db.json
+2026-04-24 07:10:03 - Total tareas: 11
+2026-04-24 07:10:03 - Vencidas: 1 | Proximas: 2
+2026-04-24 07:10:03 - Enviando notif vencidas: Tarera de ingenieria Web II (vencio hace 4d)
+2026-04-24 07:10:07 - Enviando notif proximas: Claude (vence en 14d) | App de Mascotas (vence en 2d)
+2026-04-24 07:10:11 - Finalizado

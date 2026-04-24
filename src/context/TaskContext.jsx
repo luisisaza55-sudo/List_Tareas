@@ -6,7 +6,7 @@
 import { createContext, useContext, useState, useEffect, useCallback } from 'react';
 import {
   fetchTasks, createTask, updateTask, deleteTask, toggleTaskStatus,
-  fetchCategories, createCategory,
+  fetchCategories, createCategory, updateCategory, deleteCategory,
 } from '../services/taskService';
 import { calculateTaskStats, filterTasks, generateId } from '../utils/helpers';
 import { DEFAULT_CATEGORIES, SUCCESS_MESSAGES, ERROR_MESSAGES } from '../utils/constants';
@@ -204,6 +204,30 @@ export const TaskProvider = ({ children }) => {
     }
   }, []);
 
+  const editCategory = useCallback(async (id, data) => {
+    try {
+      const updated = await updateCategory(id, data);
+      setCategories((prev) => prev.map((c) => (c.id === id ? updated : c)));
+      toast.success('Categoría actualizada.');
+      return true;
+    } catch (error) {
+      toast.error(error.message || 'Error al actualizar la categoría.');
+      return false;
+    }
+  }, []);
+
+  const removeCategory = useCallback(async (id) => {
+    try {
+      await deleteCategory(id);
+      setCategories((prev) => prev.filter((c) => c.id !== id));
+      toast.success('Categoría eliminada.');
+      return true;
+    } catch (error) {
+      toast.error(error.message || 'Error al eliminar la categoría.');
+      return false;
+    }
+  }, []);
+
   /* ─────────────────────────────────────────
      FILTROS
   ───────────────────────────────────────── */
@@ -243,7 +267,10 @@ export const TaskProvider = ({ children }) => {
      DATOS DERIVADOS
   ───────────────────────────────────────── */
   const filteredTasks = filterTasks(tasks, filters);
-  const stats         = calculateTaskStats(tasks);
+  const categoryTasks = filters.category && filters.category !== 'all'
+    ? tasks.filter((t) => t.categoria === filters.category)
+    : tasks;
+  const stats = calculateTaskStats(categoryTasks);
 
   /** Tareas por categoría (para mostrar contadores en las tarjetas de categoría) */
   const tasksByCategory = categories.reduce((acc, cat) => {
@@ -263,7 +290,7 @@ export const TaskProvider = ({ children }) => {
     filters, stats, tasksByCategory, activeStatFilter,
     addTask, editTask, removeTask, toggleTask, loadTasks,
     addSubtask, toggleSubtask, removeSubtask,
-    addCategory,
+    addCategory, editCategory, removeCategory,
     updateFilters, setStatFilter, clearFilters,
   };
 

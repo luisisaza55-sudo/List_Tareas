@@ -158,13 +158,21 @@ const TaskCard = ({ task, onEdit }) => {
           {task.alertaDias && (
             <span className={styles.alertBadge}>🔔 Alerta {task.alertaDias}d</span>
           )}
-          {/* Progreso de subtareas (mini) */}
-          {subtasks.length > 0 && !expanded && (
-            <span className={styles.subPreview}>
-              ☑ {subtasks.filter(s => s.completed).length}/{subtasks.length}
-            </span>
-          )}
         </div>
+
+        {/* ── Progreso de subtareas (siempre visible) ── */}
+        {subtasks.length > 0 && (
+          <div className={styles.progressRow} onClick={() => setExpanded(!expanded)}>
+            <span className={styles.progressLabel}>SUBTAREAS</span>
+            <span className={styles.subtaskCount}>
+              {subtasks.filter(s => s.completed).length}/{subtasks.length}
+            </span>
+            <div className={styles.subProgress}>
+              <div className={styles.subProgressBar} style={{ width: `${progress}%` }} />
+            </div>
+            <span className={styles.progressPct}>{progress}%</span>
+          </div>
+        )}
 
         {/* ══════════════════════════════
             ÁREA EXPANDIDA
@@ -187,26 +195,6 @@ const TaskCard = ({ task, onEdit }) => {
 
                 {/* ── Subtareas ── */}
                 <div className={styles.subtaskSection}>
-                  <div className={styles.subtaskHeader}>
-                    <span className={styles.subtaskTitle}>
-                      SUBTAREAS
-                    </span>
-                    {subtasks.length > 0 && (
-                      <span className={styles.subtaskCount}>
-                        {subtasks.filter(s => s.completed).length}/{subtasks.length}
-                      </span>
-                    )}
-                  </div>
-
-                  {/* Barra de progreso de subtareas */}
-                  {subtasks.length > 0 && (
-                    <div className={styles.subProgress}>
-                      <div
-                        className={styles.subProgressBar}
-                        style={{ width: `${progress}%` }}
-                      />
-                    </div>
-                  )}
 
                   {/* Lista de subtareas */}
                   <div className={styles.subtaskList}>

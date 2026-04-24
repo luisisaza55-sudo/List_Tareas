@@ -101,6 +101,17 @@ export const createCategory = async (categoryData) => {
 };
 
 /**
+ * Actualiza una categoría existente
+ * @param {string|number} id
+ * @param {Object} data - { name, color }
+ * @returns {Promise<Object>}
+ */
+export const updateCategory = async (id, data) => {
+  const response = await api.put(`${ENDPOINTS.CATEGORIES}/${id}`, data);
+  return response.data;
+};
+
+/**
  * Elimina una categoría (no borra las tareas asociadas)
  * @param {string|number} id
  * @returns {Promise<void>}

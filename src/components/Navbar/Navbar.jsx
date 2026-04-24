@@ -3,16 +3,29 @@
  * @description Barra de navegación superior responsive con menú móvil
  */
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useAuth } from '../../context/AuthContext';
 import { useTasks } from '../../context/TaskContext';
+import { useTheme } from '../../hooks/useTheme';
 import styles from './Navbar.module.css';
 
 const Navbar = () => {
   const { user, logout } = useAuth();
   const { stats } = useTasks();
+  const { theme, toggleTheme } = useTheme();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [now, setNow] = useState(new Date());
+
+  useEffect(() => {
+    const t = setInterval(() => setNow(new Date()), 1000);
+    return () => clearInterval(t);
+  }, []);
+
+  const dias = ['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'];
+  const meses = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+  const fechaStr = `${dias[now.getDay()]} ${now.getDate()} de ${meses[now.getMonth()]}`;
+  const horaStr  = now.toLocaleTimeString('es-CO', { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false });
 
   const handleLogout = () => {
     setMenuOpen(false);
@@ -52,6 +65,13 @@ const Navbar = () => {
           </div>
         </div>
 
+        {/* Fecha y hora */}
+        <div className={styles.clock}>
+          <span className={styles.clockDate}>{fechaStr}</span>
+          <span className={styles.clockSep}>—</span>
+          <span className={styles.clockTime}>{horaStr}</span>
+        </div>
+
         {/* Acciones de usuario */}
         <div className={styles.actions}>
           <div className={styles.userInfo}>
@@ -63,6 +83,26 @@ const Navbar = () => {
               <span className={styles.userEmail}>{user?.email}</span>
             </div>
           </div>
+
+          <button className={styles.themeBtn} onClick={toggleTheme} title={theme === 'dark' ? 'Modo claro' : 'Modo oscuro'}>
+            {theme === 'dark' ? (
+              <svg viewBox="0 0 24 24" fill="none">
+                <circle cx="12" cy="12" r="5" stroke="currentColor" strokeWidth="2"/>
+                <line x1="12" y1="2"  x2="12" y2="4"  stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                <line x1="12" y1="20" x2="12" y2="22" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                <line x1="2"  y1="12" x2="4"  y2="12" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                <line x1="20" y1="12" x2="22" y2="12" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+              </svg>
+            ) : (
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            )}
+          </button>
 
           <button className={styles.logoutBtn} onClick={handleLogout} title="Cerrar sesión">
             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

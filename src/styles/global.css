@@ -61,6 +61,48 @@
   --font-mono: 'JetBrains Mono', monospace;
 }
 
+/* =============================================
+   TEMA CLARO
+   ============================================= */
+body.light {
+  --color-bg-primary:    #f0f4fc;
+  --color-bg-secondary:  #e8edf8;
+  --color-bg-card:       #ffffff;
+  --color-bg-card-hover: #f5f8ff;
+  --color-bg-input:      #eef2fa;
+  --color-bg-modal:      #ffffff;
+
+  --color-green-primary:  #00a854;
+  --color-green-secondary:#008f45;
+  --color-green-dim:      #00a85414;
+  --color-green-border:   #00a85430;
+  --color-green-glow:     #00a85460;
+
+  --color-text-primary:   #1a2340;
+  --color-text-secondary: #4a5878;
+  --color-text-muted:     #8e9ab8;
+  --color-text-accent:    #00a854;
+
+  --color-pending:   #ea6000;
+  --color-completed: #047857;
+  --color-overdue:   #b91c1c;
+  --color-upcoming:  #0369a1;
+
+  --color-border:       #d8e0f0;
+  --color-border-light: #c4ceea;
+
+  --shadow-sm:           0 2px 8px  rgba(30,50,100,0.08);
+  --shadow-md:           0 4px 20px rgba(30,50,100,0.12);
+  --shadow-lg:           0 8px 40px rgba(30,50,100,0.15);
+  --shadow-green:        0 0 20px rgba(0,168,84,0.12);
+  --shadow-green-strong: 0 0 30px rgba(0,168,84,0.22);
+}
+
+body.light ::-webkit-scrollbar-track { background: #e8edf8; }
+body.light ::-webkit-scrollbar-thumb { background: #c4ceea; }
+body.light ::-webkit-scrollbar-thumb:hover { background: #00a854; }
+body.light ::selection { background: #00a85420; color: #00a854; }
+
 /* Reset y Base */
 *, *::before, *::after {
   margin: 0;

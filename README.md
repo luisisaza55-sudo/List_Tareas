@@ -1,4 +1,5 @@
 # ✅ ToDo List Pro
+npx json-server --watch db.json --port 3001
 
 > Sistema avanzado de gestión de tareas — UniMinuto · Ingeniería Web II
 
