@@ -1,0 +1,283 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* ── Grupos de campo ── */
+.fieldGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  position: relative;
+}
+
+.label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.required {
+  color: var(--color-overdue);
+  margin-left: 2px;
+}
+
+.optional {
+  color: var(--color-text-muted);
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+/* ── Inputs ── */
+.input,
+.textarea {
+  background: var(--color-bg-input);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 0.65rem 0.9rem;
+  color: var(--color-text-primary);
+  font-size: 0.9rem;
+  transition: all var(--transition-fast);
+  width: 100%;
+}
+
+.input:focus,
+.textarea:focus {
+  border-color: var(--color-green-primary);
+  box-shadow: 0 0 0 3px var(--color-green-dim);
+  outline: none;
+}
+
+.input::placeholder,
+.textarea::placeholder {
+  color: var(--color-text-muted);
+}
+
+.inputError {
+  border-color: var(--color-overdue) !important;
+  box-shadow: 0 0 0 3px rgba(255, 82, 82, 0.1) !important;
+}
+
+/* Date input */
+input[type="date"].input {
+  color-scheme: dark;
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 80px;
+  font-family: var(--font-primary);
+  line-height: 1.5;
+}
+
+.charCount {
+  font-size: 0.7rem;
+  color: var(--color-text-muted);
+  text-align: right;
+  margin-top: -0.15rem;
+}
+
+.errorMsg {
+  font-size: 0.76rem;
+  color: var(--color-overdue);
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.errorMsg::before {
+  content: '⚠';
+  font-size: 0.7rem;
+}
+
+/* ── Row de dos columnas ── */
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+/* ── Categorías ── */
+.categoryGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.catBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.9rem;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--color-border);
+  background: transparent;
+  color: var(--color-text-secondary);
+  font-size: 0.82rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.catBtn:hover {
+  border-color: var(--cat-c);
+  color: var(--cat-c);
+  background: color-mix(in srgb, var(--cat-c) 10%, transparent);
+}
+
+.catBtnActive {
+  border-color: var(--cat-c) !important;
+  color: var(--cat-c) !important;
+  background: color-mix(in srgb, var(--cat-c) 15%, transparent) !important;
+  font-weight: 600;
+}
+
+.catDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.catBtnNew {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.4rem 0.9rem;
+  border-radius: var(--radius-full);
+  border: 1px dashed var(--color-border-light);
+  background: transparent;
+  color: var(--color-text-muted);
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.catBtnNew:hover {
+  border-color: var(--color-green-primary);
+  color: var(--color-green-primary);
+}
+
+/* ── Días de alerta ── */
+.alertDaysGrid {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.alertBtn {
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  background: transparent;
+  color: var(--color-text-secondary);
+  font-size: 0.8rem;
+  font-weight: 600;
+  font-family: var(--font-mono);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.alertBtn:hover {
+  border-color: var(--color-green-primary);
+  color: var(--color-green-primary);
+}
+
+.alertBtnActive {
+  background: var(--color-green-dim) !important;
+  border-color: var(--color-green-primary) !important;
+  color: var(--color-green-primary) !important;
+}
+
+/* ── Acciones del formulario ── */
+.formActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--color-border);
+  margin-top: 0.25rem;
+}
+
+.cancelBtn,
+.submitBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.6rem 1.25rem;
+  border-radius: var(--radius-md);
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  border: 1px solid;
+}
+
+.cancelBtn {
+  background: transparent;
+  border-color: var(--color-border-light);
+  color: var(--color-text-secondary);
+}
+
+.cancelBtn:hover:not(:disabled) {
+  border-color: var(--color-text-secondary);
+  color: var(--color-text-primary);
+}
+
+.submitBtn {
+  background: var(--color-green-primary);
+  border-color: var(--color-green-primary);
+  color: var(--color-bg-primary);
+}
+
+.submitBtn:hover:not(:disabled) {
+  background: var(--color-green-secondary);
+  border-color: var(--color-green-secondary);
+  box-shadow: var(--shadow-green);
+}
+
+.cancelBtn:disabled,
+.submitBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btnLoading {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btnSpinner {
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(10, 14, 26, 0.3);
+  border-top-color: var(--color-bg-primary);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── Responsive ── */
+@media (max-width: 480px) {
+  .row {
+    grid-template-columns: 1fr;
+  }
+
+  .formActions {
+    flex-direction: column-reverse;
+  }
+
+  .cancelBtn,
+  .submitBtn {
+    width: 100%;
+    justify-content: center;
+  }
+}

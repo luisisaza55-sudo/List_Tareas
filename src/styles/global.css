@@ -1,0 +1,176 @@
+/* =============================================
+   GLOBAL STYLES - ToDo List Pro
+   Tema: Verde Ingenieril + Negro Elegante
+   ============================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  /* Paleta Principal */
+  --color-bg-primary: #0a0e1a;
+  --color-bg-secondary: #0f1629;
+  --color-bg-card: #141c2e;
+  --color-bg-card-hover: #1a2440;
+  --color-bg-input: #0d1525;
+  --color-bg-modal: #111827;
+
+  /* Verdes Ingenieriles */
+  --color-green-primary: #00e676;
+  --color-green-secondary: #00c853;
+  --color-green-dim: #00e67620;
+  --color-green-border: #00e67640;
+  --color-green-glow: #00e67680;
+
+  /* Textos */
+  --color-text-primary: #f0f4ff;
+  --color-text-secondary: #8892b0;
+  --color-text-muted: #4a5568;
+  --color-text-accent: #00e676;
+
+  /* Estados */
+  --color-pending: #ffd740;
+  --color-completed: #00e676;
+  --color-overdue: #ff5252;
+  --color-upcoming: #40c4ff;
+
+  /* Bordes */
+  --color-border: #1e2d4a;
+  --color-border-light: #263555;
+
+  /* Sombras */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.6);
+  --shadow-green: 0 0 20px rgba(0, 230, 118, 0.15);
+  --shadow-green-strong: 0 0 30px rgba(0, 230, 118, 0.3);
+
+  /* Radios */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  /* Transiciones */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.25s ease;
+  --transition-slow: 0.4s ease;
+
+  /* Tipografía */
+  --font-primary: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+/* Reset y Base */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-primary);
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  min-height: 100vh;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Scrollbar personalizado */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border-light);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-green-primary);
+}
+
+/* Selección de texto */
+::selection {
+  background: var(--color-green-dim);
+  color: var(--color-green-primary);
+}
+
+/* Links */
+a {
+  color: var(--color-green-primary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-green-secondary);
+}
+
+/* Inputs globales */
+input, textarea, select {
+  font-family: var(--font-primary);
+  outline: none;
+}
+
+button {
+  font-family: var(--font-primary);
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+/* Utilitarios */
+.text-green { color: var(--color-green-primary); }
+.text-muted { color: var(--color-text-secondary); }
+.text-center { text-align: center; }
+.font-mono { font-family: var(--font-mono); }
+
+/* Animaciones globales */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse-green {
+  0%, 100% { box-shadow: 0 0 0 0 var(--color-green-glow); }
+  50% { box-shadow: 0 0 0 8px transparent; }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease forwards;
+}
+
+/* Grid de layout principal */
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Responsive helpers */
+@media (max-width: 768px) {
+  html { font-size: 14px; }
+}

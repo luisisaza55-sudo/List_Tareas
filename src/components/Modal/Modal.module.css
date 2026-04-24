@@ -1,0 +1,112 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+  z-index: 200;
+}
+
+/*
+  Wrapper de centrado: ocupa toda la pantalla con flexbox.
+  El centrado se hace aquí (NO en .modal con transform translate),
+  para no interferir con las animaciones de Framer Motion.
+*/
+.wrapper {
+  position: fixed;
+  inset: 0;
+  z-index: 201;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  pointer-events: none; /* el overlay ya captura el click fuera */
+}
+
+.modal {
+  /* Sin position fixed ni transform de centrado — lo maneja el wrapper */
+  position: relative;
+  pointer-events: all;  /* re-habilita clicks dentro del modal */
+  background: var(--color-bg-modal);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  width: 100%;
+  max-height: calc(100vh - 4rem);
+  overflow-y: auto;
+}
+
+.sm { max-width: 420px; }
+.md { max-width: 560px; }
+.lg { max-width: 720px; }
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--color-border);
+  position: sticky;
+  top: 0;
+  background: var(--color-bg-modal);
+  z-index: 1;
+}
+
+.title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.title::before {
+  content: '';
+  width: 3px;
+  height: 1.1em;
+  background: var(--color-green-primary);
+  border-radius: var(--radius-full);
+  display: inline-block;
+}
+
+.closeBtn {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-md);
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--color-text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.closeBtn svg {
+  width: 16px;
+  height: 16px;
+}
+
+.closeBtn:hover {
+  background: rgba(255, 82, 82, 0.1);
+  border-color: rgba(255, 82, 82, 0.3);
+  color: var(--color-overdue);
+}
+
+/* Contenido */
+.content {
+  padding: 1.5rem;
+}
+
+/* Scrollbar del modal */
+.modal::-webkit-scrollbar {
+  width: 4px;
+}
+
+.modal::-webkit-scrollbar-thumb {
+  background: var(--color-border-light);
+  border-radius: var(--radius-full);
+}

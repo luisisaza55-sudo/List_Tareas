@@ -1,0 +1,305 @@
+/* ── CategoryGrid ── */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.sectionLabel {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-text-muted);
+  padding-left: 0.25rem;
+}
+
+/* ─────────────────────────────────────────
+   Grid de tarjetas
+   max 2 columnas en el sidebar (~280–320px)
+───────────────────────────────────────── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.65rem;
+}
+
+/* ─────────────────────────────────────────
+   Tarjeta base
+───────────────────────────────────────── */
+.card {
+  position: relative;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 0.85rem 0.75rem 0.7rem;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.2rem;
+  overflow: hidden;
+  transition: all var(--transition-normal);
+  text-align: left;
+  width: 100%;
+}
+
+.card:hover {
+  border-color: var(--cat-color, var(--color-green-primary));
+  background: var(--cat-glow, var(--color-green-dim));
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+/* Barra de color superior */
+.colorBar {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--cat-color, var(--color-green-primary));
+  opacity: 0.5;
+  transition: opacity var(--transition-fast);
+}
+
+.card:hover .colorBar,
+.cardActive .colorBar {
+  opacity: 1;
+}
+
+/* Estado activo */
+.cardActive {
+  border-color: var(--cat-color, var(--color-green-primary)) !important;
+  background: var(--cat-glow, var(--color-green-dim)) !important;
+  box-shadow: 0 0 0 2px var(--cat-color, var(--color-green-primary)),
+              0 8px 24px rgba(0,0,0,0.3);
+}
+
+/* Ícono */
+.icon {
+  font-size: 1.4rem;
+  line-height: 1;
+  margin-bottom: 0.15rem;
+}
+
+/* Nombre */
+.name {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.cardActive .name {
+  color: var(--cat-color, var(--color-green-primary));
+}
+
+/* Contador */
+.count {
+  font-size: 1.4rem;
+  font-weight: 800;
+  font-family: var(--font-mono);
+  color: var(--cat-color, var(--color-green-primary));
+  line-height: 1;
+  opacity: 0.85;
+}
+
+.cardActive .count {
+  opacity: 1;
+}
+
+/* Mini stats */
+.miniStats {
+  display: flex;
+  gap: 0.4rem;
+  margin-top: 0.1rem;
+}
+
+.miniPending,
+.miniDone {
+  font-size: 0.65rem;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+
+.miniDone {
+  color: var(--color-green-primary);
+  opacity: 0.7;
+}
+
+/* ─────────────────────────────────────────
+   Tarjeta "Agregar"
+───────────────────────────────────────── */
+.addCard {
+  align-items: center;
+  justify-content: center;
+  border-style: dashed;
+  border-color: var(--color-border-light);
+  gap: 0.35rem;
+}
+
+.addCard:hover {
+  border-color: var(--color-green-primary);
+  background: var(--color-green-dim) !important;
+  --cat-color: var(--color-green-primary);
+}
+
+.addIcon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted);
+  transition: all var(--transition-fast);
+}
+
+.addCard:hover .addIcon {
+  background: var(--color-green-dim);
+  color: var(--color-green-primary);
+}
+
+.addIcon svg {
+  width: 16px;
+  height: 16px;
+}
+
+.addLabel {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+
+.addCard:hover .addLabel {
+  color: var(--color-green-primary);
+}
+
+/* ─────────────────────────────────────────
+   Tarjeta "Todas"
+───────────────────────────────────────── */
+.allCard {
+  --cat-color: #a0aec0;
+  --cat-glow:  rgba(160,174,192,0.08);
+}
+
+.allCardActive {
+  border-color: #a0aec0 !important;
+  background: rgba(160,174,192,0.08) !important;
+  box-shadow: 0 0 0 2px #a0aec0, 0 8px 24px rgba(0,0,0,0.3);
+}
+
+.allCardActive .name {
+  color: #a0aec0;
+}
+
+/* ─────────────────────────────────────────
+   Formulario de nueva categoría (inline)
+───────────────────────────────────────── */
+.addForm {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-green-border);
+  border-radius: var(--radius-lg);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.addFormTitle {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.addInput {
+  width: 100%;
+  background: var(--color-bg-input);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 0.55rem 0.75rem;
+  color: var(--color-text-primary);
+  font-size: 0.88rem;
+  outline: none;
+  transition: border-color var(--transition-fast);
+}
+
+.addInput:focus {
+  border-color: var(--color-green-primary);
+  box-shadow: 0 0 0 2px var(--color-green-dim);
+}
+
+/* Selector de color */
+.colorPicker {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.colorDot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: transform var(--transition-fast), border-color var(--transition-fast);
+}
+
+.colorDot:hover {
+  transform: scale(1.2);
+}
+
+.colorDotActive {
+  border-color: white;
+  transform: scale(1.2);
+  box-shadow: 0 0 0 2px rgba(255,255,255,0.3);
+}
+
+/* Acciones del form */
+.addFormActions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.addFormCancel,
+.addFormSubmit {
+  flex: 1;
+  padding: 0.45rem 0.75rem;
+  border-radius: var(--radius-md);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  border: 1px solid;
+}
+
+.addFormCancel {
+  background: transparent;
+  border-color: var(--color-border-light);
+  color: var(--color-text-secondary);
+}
+
+.addFormCancel:hover {
+  border-color: var(--color-text-secondary);
+  color: var(--color-text-primary);
+}
+
+.addFormSubmit {
+  background: var(--color-green-primary);
+  border-color: var(--color-green-primary);
+  color: var(--color-bg-primary);
+}
+
+.addFormSubmit:hover:not(:disabled) {
+  background: var(--color-green-secondary);
+}
+
+.addFormSubmit:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
