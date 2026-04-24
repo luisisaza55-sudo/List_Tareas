@@ -1,0 +1,240 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "email": "admin@admin.com",
+      "password": "123456",
+      "name": "Administrador"
+    },
+    {
+      "id": "2",
+      "email": "usuario@test.com",
+      "password": "test123",
+      "name": "Usuario Test"
+    }
+  ],
+  "tasks": [
+    {
+      "titulo": "App licencias",
+      "descripcion": "hacer la licencia",
+      "categoria": "Trabajo",
+      "fechaInicio": "2026-04-20",
+      "fechaFin": "2026-04-21",
+      "alertaDias": 1,
+      "categoriaColor": "#00e676",
+      "estado": "completada",
+      "createdAt": "2026-04-20T17:58:38.885Z",
+      "id": "5Tm4CsCcIzo",
+      "updatedAt": "2026-04-20T17:58:58.006Z"
+    },
+    {
+      "titulo": "Ajuste Arquitectura Lic. Construcción",
+      "descripcion": "Ajustar Licencias",
+      "categoria": "Trabajo",
+      "fechaInicio": "2026-04-20",
+      "fechaFin": "2026-04-21",
+      "alertaDias": 1,
+      "categoriaColor": "#00e676",
+      "updatedAt": "2026-04-20T19:17:37.424Z",
+      "id": "9fxYBBCHdZU"
+    },
+    {
+      "titulo": "Ajustar Flujo de Envio ",
+      "descripcion": "Ajustar Flujo de Envio \n",
+      "categoria": "Trabajo",
+      "fechaInicio": "2026-04-20",
+      "fechaFin": "2026-04-22",
+      "alertaDias": 3,
+      "categoriaColor": "#00e676",
+      "estado": "pendiente",
+      "createdAt": "2026-04-20T19:18:22.641Z",
+      "id": "Dbg5sE5oyw8"
+    },
+    {
+      "titulo": "- Ajustes Sharepoint Solicitados por Maria",
+      "descripcion": "- Ajustes Sharepoint Solicitados por Maria",
+      "categoria": "Trabajo",
+      "fechaInicio": "2026-04-20",
+      "fechaFin": "2026-04-21",
+      "alertaDias": 3,
+      "categoriaColor": "#00e676",
+      "estado": "pendiente",
+      "createdAt": "2026-04-20T19:18:42.662Z",
+      "id": "cZZnxVEhyXY"
+    },
+    {
+      "titulo": "- Ajustes Sharepoint Solicitados por Maria",
+      "descripcion": "- Ajustes Sharepoint Solicitados por Maria",
+      "categoria": "Trabajo",
+      "fechaInicio": "2026-04-20",
+      "fechaFin": "2026-04-21",
+      "alertaDias": 3,
+      "categoriaColor": "#00e676",
+      "estado": "pendiente",
+      "createdAt": "2026-04-20T19:18:57.896Z",
+      "id": "curXxpltUD4"
+    },
+    {
+      "titulo": "- Quitar todas las aclaraciones y estado no se vence",
+      "descripcion": "- Quitar todas las aclaraciones y estado no se vence",
+      "categoria": "Trabajo",
+      "fechaInicio": "2026-04-20",
+      "fechaFin": "2026-04-21",
+      "alertaDias": 5,
+      "categoriaColor": "#00e676",
+      "estado": "pendiente",
+      "createdAt": "2026-04-20T19:19:13.317Z",
+      "id": "K9MDywPKIYw"
+    },
+    {
+      "titulo": "Pago Proximo semestre",
+      "descripcion": "Pago Proximo semestre",
+      "categoria": "Universidad",
+      "fechaInicio": "2026-04-20",
+      "fechaFin": "2026-05-09",
+      "alertaDias": 3,
+      "categoriaColor": "#40c4ff",
+      "estado": "pendiente",
+      "createdAt": "2026-04-20T19:19:38.701Z",
+      "id": "_FLv8tv88dE"
+    },
+    {
+      "titulo": "App App ",
+      "descripcion": "App ",
+      "categoria": "Universidad",
+      "fechaInicio": "2026-04-20",
+      "fechaFin": "2026-04-29",
+      "alertaDias": 3,
+      "categoriaColor": "#40c4ff",
+      "estado": "pendiente",
+      "createdAt": "2026-04-20T19:19:52.210Z",
+      "id": "3dvrVu2ix3M"
+    },
+    {
+      "titulo": "App Licencias",
+      "descripcion": "adasdas",
+      "categoria": "Trabajo",
+      "fechaInicio": "2026-04-20",
+      "fechaFin": "2026-04-23",
+      "alertaDias": 3,
+      "categoriaColor": "#00e676",
+      "subtasks": [],
+      "estado": "completada",
+      "createdAt": "2026-04-20T19:47:39.410Z",
+      "id": "2_W2Q6gDylE",
+      "updatedAt": "2026-04-21T00:13:34.312Z"
+    },
+    {
+      "titulo": "App licencias",
+      "descripcion": "adasdasd",
+      "categoria": "Trabajo",
+      "fechaInicio": "2026-04-20",
+      "fechaFin": "2026-04-21",
+      "alertaDias": 3,
+      "categoriaColor": "#00e676",
+      "subtasks": [
+        {
+          "id": "mo7vf59chobuajznlw",
+          "title": "ASDASD",
+          "completed": false
+        }
+      ],
+      "estado": "completada",
+      "createdAt": "2026-04-20T19:48:04.975Z",
+      "id": "VcZeljQCpCU",
+      "updatedAt": "2026-04-21T00:13:44.160Z"
+    },
+    {
+      "titulo": "asdasd",
+      "descripcion": "asdasd",
+      "categoria": "Universidad",
+      "fechaInicio": "2026-04-20",
+      "fechaFin": "2026-05-01",
+      "alertaDias": 3,
+      "categoriaColor": "#40c4ff",
+      "subtasks": [
+        {
+          "id": "mo7lynbmt4ljdgm89i",
+          "title": "asdasd",
+          "completed": false
+        },
+        {
+          "id": "mo7lypi9xpdtn1cz2kd",
+          "title": "asdasd",
+          "completed": false
+        }
+      ],
+      "estado": "pendiente",
+      "createdAt": "2026-04-20T19:48:18.077Z",
+      "id": "fk9VJRbp2vQ",
+      "updatedAt": "2026-04-20T19:57:30.311Z"
+    },
+    {
+      "titulo": "Tarera de ingenieria Web II",
+      "descripcion": "Se debe hacer una web API que simule la creación de tareas",
+      "categoria": "Universidad",
+      "fechaInicio": "2026-04-20",
+      "fechaFin": "2026-04-20",
+      "alertaDias": 1,
+      "categoriaColor": "#40c4ff",
+      "subtasks": [
+        {
+          "id": "mo7mtiwvky0s4y4dr2m",
+          "title": "Diseño Mockup",
+          "completed": true
+        },
+        {
+          "id": "mo7mtq16ejoe31mtk85",
+          "title": "Logica de Programacion",
+          "completed": true
+        },
+        {
+          "id": "mo7mu7ommbuv3wnqpap",
+          "title": "Codigo Htm CSS JS y API JS",
+          "completed": false
+        }
+      ],
+      "estado": "pendiente",
+      "createdAt": "2026-04-20T20:12:45.529Z",
+      "id": "fKHftzeRhoc",
+      "updatedAt": "2026-04-20T20:13:36.035Z"
+    },
+    {
+      "titulo": "Tarea de Matematicas",
+      "descripcion": "",
+      "categoria": "Universidad",
+      "fechaInicio": "2026-04-20",
+      "fechaFin": "2026-04-20",
+      "alertaDias": 3,
+      "categoriaColor": "#40c4ff",
+      "subtasks": [],
+      "estado": "completada",
+      "createdAt": "2026-04-20T20:14:14.678Z",
+      "id": "O_t0CG6RVHY",
+      "updatedAt": "2026-04-20T20:14:18.151Z"
+    }
+  ],
+  "categories": [
+    {
+      "id": "1",
+      "name": "Trabajo",
+      "color": "#00e676"
+    },
+    {
+      "id": "2",
+      "name": "Universidad",
+      "color": "#40c4ff"
+    },
+    {
+      "id": "3",
+      "name": "Casa",
+      "color": "#ff6d00"
+    },
+    {
+      "id": "4",
+      "name": "Compras",
+      "color": "#e040fb"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

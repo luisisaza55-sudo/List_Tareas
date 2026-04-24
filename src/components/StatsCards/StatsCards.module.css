@@ -1,0 +1,158 @@
+/* ──────────────────────────────────────────────────────
+   StatsCards — 4 columnas en PC, 2 en tablet/móvil
+   Al hacer clic activan un filtro (estado activo con glow)
+────────────────────────────────────────────────────── */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+}
+
+/* ── Tarjeta base ── */
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-lg);
+  padding: 1rem 1rem 0.75rem;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  position: relative;
+  overflow: hidden;
+  transition: all var(--transition-normal);
+  text-align: left;
+  width: 100%;
+}
+
+/* Línea de acento superior */
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--card-color);
+  opacity: 0.5;
+  transition: opacity var(--transition-fast);
+}
+
+.card:hover::before,
+.cardActive::before {
+  opacity: 1;
+}
+
+.card:hover {
+  border-color: var(--card-color);
+  box-shadow: 0 6px 24px rgba(0,0,0,0.3),
+              0 0 0 1px var(--card-color);
+}
+
+/* Estado activo */
+.cardActive {
+  box-shadow: 0 0 0 2px var(--card-color),
+              0 0 20px color-mix(in srgb, var(--card-color) 20%, transparent),
+              0 8px 24px rgba(0,0,0,0.3);
+}
+
+/* ── Ícono ── */
+.iconWrap {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-md);
+  background: rgba(255,255,255,0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--card-color);
+  transition: all var(--transition-normal);
+  flex-shrink: 0;
+}
+
+.iconWrap svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Ícono en modo activo: fondo sólido del color + contraste */
+.iconActive {
+  background: var(--card-color) !important;
+  color: #0a0e1a !important;
+  box-shadow: 0 0 12px color-mix(in srgb, var(--card-color) 50%, transparent);
+}
+
+/* ── Número ── */
+.value {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--card-color);
+  font-family: var(--font-mono);
+  line-height: 1;
+  text-shadow: 0 0 20px color-mix(in srgb, var(--card-color) 30%, transparent);
+}
+
+/* ── Textos ── */
+.info {
+  flex: 1;
+}
+
+.label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: 0.1rem;
+}
+
+.description {
+  font-size: 0.72rem;
+  color: var(--color-text-secondary);
+}
+
+/* ── Progreso ── */
+.progress {
+  height: 3px;
+  background: rgba(255,255,255,0.06);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  margin-top: 0.25rem;
+}
+
+.progressBar {
+  height: 100%;
+  background: var(--card-color);
+  border-radius: var(--radius-full);
+  transition: width 0.5s ease;
+  opacity: 0.7;
+}
+
+/* ── Badge "filtro activo" ── */
+.activeIndicator {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  font-size: 0.62rem;
+  font-weight: 700;
+  color: var(--card-color);
+  background: color-mix(in srgb, var(--card-color) 15%, transparent);
+  border: 1px solid color-mix(in srgb, var(--card-color) 30%, transparent);
+  padding: 2px 6px;
+  border-radius: var(--radius-full);
+  letter-spacing: 0.02em;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .value { font-size: 1.5rem; }
+}
+
+@media (max-width: 400px) {
+  .grid { gap: 0.5rem; }
+  .card { padding: 0.75rem 0.75rem 0.6rem; }
+  .value { font-size: 1.3rem; }
+}

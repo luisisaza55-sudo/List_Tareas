@@ -1,0 +1,9 @@
+/* Variables exportadas para uso en CSS Modules */
+/* Este archivo centraliza todos los tokens de diseño */
+
+:export {
+  colorGreenPrimary: #00e676;
+  colorBgPrimary: #0a0e1a;
+  colorBgCard: #141c2e;
+  colorTextPrimary: #f0f4ff;
+}
